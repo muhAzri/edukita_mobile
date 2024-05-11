@@ -5,9 +5,14 @@ class DioConfig {
   late Dio _client;
 
   DioConfig() {
-    _client = Dio(BaseOptions(
+    _client = Dio(
+      BaseOptions(
         baseUrl: const String.fromEnvironment("BASE_URL"),
-        receiveDataWhenStatusError: true));
+        receiveDataWhenStatusError: true,
+      ),
+    );
+
+    _client.interceptors.add(ClientInterceptor(client: _client));
   }
 
   Dio get client => _client;
