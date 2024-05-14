@@ -33,7 +33,9 @@ dependencies:
   core:
     path: packages/core
   cupertino_icons: ^1.0.6
+  firebase_analytics: ^10.10.5
   firebase_core: ^2.31.0
+  firebase_crashlytics: ^3.5.5
   flutter:
     sdk: flutter
 
