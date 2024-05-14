@@ -63,7 +63,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '865677946025',
     projectId: 'edu-kita',
     storageBucket: 'edu-kita.appspot.com',
+    androidClientId: '865677946025-pcnqhrhs0i1sg460t41u6dr40o975sqt.apps.googleusercontent.com',
     iosClientId: '865677946025-0s1qkh03imsimclcb739emaeo366epvg.apps.googleusercontent.com',
     iosBundleId: 'com.zrifapps.edukita',
   );
+
 }
