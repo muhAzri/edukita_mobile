@@ -9,6 +9,9 @@ class DioConfig {
       BaseOptions(
         baseUrl: const String.fromEnvironment("BASE_URL"),
         receiveDataWhenStatusError: true,
+        validateStatus: (status) {
+          return status != null;
+        },
       ),
     );
 
