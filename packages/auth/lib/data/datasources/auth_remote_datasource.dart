@@ -1,5 +1,7 @@
+import 'package:auth/data/models/auth_data_model.dart';
 import 'package:auth/data/models/login_model.dart';
 import 'package:core/common/exception.dart';
+import 'package:core/common/response.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -57,13 +59,17 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
       final response =
           await client.post("/auth/sessions", data: loginModel.toJson());
 
+      final responseModel = ResponseModel<AuthDataModel>.fromJson(response.data,
+          (data) => AuthDataModel.fromJson(data as Map<String, dynamic>));
+
       if (response.statusCode != 200) {
-        throw ServerException(response.data['error']);
+        throw ServerException(responseModel.error!);
       }
 
-      final data = response.data['data'];
-      await storage.write(key: "access_token", value: data['access_token']);
-      await storage.write(key: "refresh_token", value: data['refresh_token']);
+      await storage.write(
+          key: "access_token", value: responseModel.data?.accessToken);
+      await storage.write(
+          key: "refresh_token", value: responseModel.data?.refreshToken);
       await storage.delete(key: "firebase_token");
     } catch (e) {
       if (e is ServerException) {

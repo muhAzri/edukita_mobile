@@ -1,5 +1,7 @@
 import 'package:core/common/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:home/presentation/screens/home_screen.dart';
+import 'package:core/injector.dart' as di;
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -20,7 +22,10 @@ class _MainScreenState extends State<MainScreen> {
   Widget buildBody(BuildContext context) {
     switch (currentIndex) {
       case 0:
-        return const Placeholder();
+        return HomeScreen(
+          learningTopicBloc: di.locator(),
+          shortProfileBloc: di.locator(),
+        );
       case 1:
         return const Placeholder();
       case 2:
