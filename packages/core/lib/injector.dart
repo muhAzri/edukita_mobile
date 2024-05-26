@@ -24,7 +24,7 @@ final locator = GetIt.instance;
 
 Future<void> initializeInjector() async {
   //HTTP Client
-  locator.registerFactory<Dio>(() => DioConfig().client);
+  locator.registerSingleton<Dio>(DioConfig().client);
 
   //BLOC
   locator.registerFactory(
