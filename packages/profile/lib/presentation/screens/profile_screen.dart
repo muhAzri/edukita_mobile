@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:core/common/styles.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -198,17 +196,17 @@ class StatsSection extends StatelessWidget {
               ),
             ),
           ),
-          // SizedBox(
-          //   height: 8.h,
-          // ),
-          // const RowLabelValueWidget(
-          //   label: "Rating Sekarang",
-          //   value: "1256",
-          // ),
-          // const RowLabelValueWidget(
-          //   label: "Total Soal Dikerjakan",
-          //   value: "30",
-          // ),
+          SizedBox(
+            height: 8.h,
+          ),
+          const RowLabelValueWidget(
+            label: "Rating Sekarang",
+            value: "1256",
+          ),
+          const RowLabelValueWidget(
+            label: "Total Soal Dikerjakan",
+            value: "30",
+          ),
         ],
       ),
     );
