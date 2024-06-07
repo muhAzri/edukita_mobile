@@ -46,3 +46,4 @@ ios/Runner/GoogleService-Info.plist
 
 #Environment
 env.json
+**/**/coverage/
