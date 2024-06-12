@@ -6,6 +6,7 @@ import 'package:core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:core/injector.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:question/presentation/screens/question_screen.dart';
 
 class AppRouter {
   static Route? onGenerateRoute(RouteSettings settings) {
@@ -26,7 +27,15 @@ class AppRouter {
 
               case AppRoutes.mainScreen:
                 return const MainScreen();
-                
+
+              case AppRoutes.questionScreen:
+                final args = settings.arguments as Map<String, dynamic>;
+
+                final String learningTopicID = args['learningTopicID'];
+
+                return QuestionScreen(
+                  learningTopicID: learningTopicID,
+                );
 
               default:
                 return const NamedRouteNotFound();

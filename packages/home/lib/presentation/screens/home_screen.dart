@@ -177,10 +177,7 @@ class LearningTopicsGrid extends StatelessWidget {
                 itemCount: state.learningTopics.length,
                 itemBuilder: (context, index) {
                   return LearningTopicGridWidget(
-                    image:
-                        AssetsManager.getIcon(state.learningTopics[index].icon),
-                    learningTopicName: state.learningTopics[index].name,
-                    onTap: () {},
+                    learningTopic: state.learningTopics[index],
                   );
                 },
               ),
