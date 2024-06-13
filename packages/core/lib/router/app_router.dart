@@ -6,6 +6,7 @@ import 'package:core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:core/injector.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:question/bloc/question/question_bloc.dart';
 import 'package:question/presentation/screens/question_screen.dart';
 
 class AppRouter {
@@ -34,6 +35,7 @@ class AppRouter {
                 final String learningTopicID = args['learningTopicID'];
 
                 return QuestionScreen(
+                  questionBloc: di.locator<QuestionBloc>(),
                   learningTopicID: learningTopicID,
                 );
 

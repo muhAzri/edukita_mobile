@@ -48,6 +48,14 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  awesome_dialog:
+    dependency: transitive
+    description:
+      name: awesome_dialog
+      sha256: "41c41ae4b30b5c7f26bb3d9f9c87010ed1cab0bb4d4ac0cc513e5799c37e9d82"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.1"
   bloc:
     dependency: transitive
     description:
@@ -433,14 +441,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_tex:
-    dependency: transitive
-    description:
-      name: flutter_tex
-      sha256: a32ac54e36f79e29be4d0f9eb5e8ee5c7e196807b4ad27df3b02a27bdce6bca9
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.0.6"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -450,66 +450,66 @@ packages:
     dependency: transitive
     description:
       name: flutter_widget_from_html
-      sha256: b931148824bcfc24c7be6f2daeabf549e237c9e617e93cd63256d924884ce423
+      sha256: e79144d8a37b7d1075fc1fdebc32708bd142ad9fdf1c7d9444f5e964cc03158b
       url: "https://pub.dev"
     source: hosted
-    version: "0.15.0"
+    version: "0.15.1"
   flutter_widget_from_html_core:
     dependency: transitive
     description:
       name: flutter_widget_from_html_core
-      sha256: cc1d9be3d187ce668ee02091cd5442dfb050cdaf98e0ab9a4d12ad008f966979
+      sha256: df7c7c9e5ea144f7ab0adfbad733b4d4f7d408ab733c94e6e9fdcb327af92aa1
       url: "https://pub.dev"
     source: hosted
-    version: "0.14.12"
+    version: "0.15.1"
   fwfh_cached_network_image:
     dependency: transitive
     description:
       name: fwfh_cached_network_image
-      sha256: "952aea958a5fda7d616cc297ba4bc08427e381459e75526fa375d6d8345630d3"
+      sha256: "8e44226801bfba27930673953afce8af44da7e92573be93f60385d9865a089dd"
       url: "https://pub.dev"
     source: hosted
-    version: "0.14.2"
+    version: "0.14.3"
   fwfh_chewie:
     dependency: transitive
     description:
       name: fwfh_chewie
-      sha256: bbb036cd322ab77dc0edd34cbbf76181681f5e414987ece38745dc4f3d7408ed
+      sha256: "37bde9cedfb6dc5546176f7f0c56af1e814966cb33ec58f16c9565ed93ccb704"
       url: "https://pub.dev"
     source: hosted
-    version: "0.14.7"
+    version: "0.14.8"
   fwfh_just_audio:
     dependency: transitive
     description:
       name: fwfh_just_audio
-      sha256: "209cf9644599e37b0edb6961c4f30ce80d156f5a53a50355f75fb4a22f9fdb0a"
+      sha256: "4ff7927619ff4855567a61e126269e1fef985a9fe7e78682592da17bf658aabb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.14.3"
+    version: "0.15.1"
   fwfh_svg:
     dependency: transitive
     description:
       name: fwfh_svg
-      sha256: "3fd83926b7245d287f133a437ef430befd99d3b00ba8c600f26cc324af281f72"
+      sha256: c6bb6b513f7ce2766aba76d7276caf9a96b6fee729ac3a492c366a42f82ef02e
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.1"
+    version: "0.8.2"
   fwfh_url_launcher:
     dependency: transitive
     description:
       name: fwfh_url_launcher
-      sha256: "2a526c9819f74b4106ba2fba4dac79f0082deecd8d2c7011cd0471cb710e3eff"
+      sha256: b9f5d55a5ae2c2c07243ba33f7ba49ac9544bdb2f4c16d8139df9ccbebe3449c
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.0+4"
+    version: "0.9.1"
   fwfh_webview:
     dependency: transitive
     description:
       name: fwfh_webview
-      sha256: "63fa69577d5cbed5603cc91d6a7eca62472a852db14225da2f4ec6839c2f59e6"
+      sha256: "2cd2b1e463ddaf26b7d4f74e1a855126c4a836fdaff9551636693e07a07422b6"
       url: "https://pub.dev"
     source: hosted
-    version: "0.15.0"
+    version: "0.15.1"
   get_it:
     dependency: transitive
     description:
@@ -709,14 +709,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  markdown:
-    dependency: transitive
-    description:
-      name: markdown
-      sha256: ef2a1298144e3f985cc736b22e0ccdaf188b5b3970648f2d9dc13efd1d9df051
-      url: "https://pub.dev"
-    source: hosted
-    version: "7.2.2"
   matcher:
     dependency: transitive
     description:
@@ -749,14 +741,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.0"
-  mime:
-    dependency: transitive
-    description:
-      name: mime
-      sha256: "2e123074287cc9fd6c09de8336dae606d1ddb88d9ac47358826db698c176a1f2"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.5"
   mustache_template:
     dependency: transitive
     description:
@@ -956,6 +940,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
+  rive:
+    dependency: transitive
+    description:
+      name: rive
+      sha256: "24868d5e5ad7e7937dbaaed508e48ca96d164fb4fbeac3400be119596588ab72"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.13.7"
+  rive_common:
+    dependency: transitive
+    description:
+      name: rive_common
+      sha256: "3fe76ba4680787741688ee393e47b63417e8643816795e4eac01021683af1d84"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.9"
   rxdart:
     dependency: transitive
     description:
@@ -1273,14 +1273,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
-  webview_flutter_plus:
-    dependency: transitive
-    description:
-      name: webview_flutter_plus
-      sha256: "1f9631e1d31da121d69008f49e0314fb60153bcee7f4a66ff7d94f43dea03493"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.5"
   webview_flutter_wkwebview:
     dependency: transitive
     description:

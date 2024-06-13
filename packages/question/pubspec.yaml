@@ -9,6 +9,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  awesome_dialog: ^3.2.1
   core:
     path: ../core
   dartz: ^0.10.1
