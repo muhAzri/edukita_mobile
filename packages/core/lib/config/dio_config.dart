@@ -11,6 +11,7 @@ class DioConfig {
     _client = Dio(
       BaseOptions(
         baseUrl: const String.fromEnvironment("BASE_URL"),
+        receiveDataWhenStatusError: true,
       ),
     );
 
