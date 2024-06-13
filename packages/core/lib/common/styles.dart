@@ -20,6 +20,11 @@ TextStyle secondaryTextStyle = GoogleFonts.poppins(
   fontSize: 14.sp,
 );
 
+TextStyle whiteTextStyle = GoogleFonts.poppins(
+  color: Colors.white,
+  fontSize: 14.sp,
+);
+
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;
 FontWeight medium = FontWeight.w500;

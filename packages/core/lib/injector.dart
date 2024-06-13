@@ -19,6 +19,12 @@ import 'package:home/domain/repositories/learning_topic_repository.dart';
 import 'package:home/domain/repositories/short_profile_repository.dart';
 import 'package:home/domain/usecases/get_learning_topics.dart';
 import 'package:home/domain/usecases/get_short_profile.dart';
+import 'package:question/bloc/question/question_bloc.dart';
+import 'package:question/data/datasources/question_remote_datasource.dart';
+import 'package:question/data/repositories/question_repository.dart';
+import 'package:question/domain/repositories/question_repository.dart';
+import 'package:question/domain/usecases/answer_question.dart';
+import 'package:question/domain/usecases/get_question.dart';
 
 final locator = GetIt.instance;
 
@@ -45,6 +51,13 @@ Future<void> initializeInjector() async {
     ),
   );
 
+  locator.registerFactory(
+    () => QuestionBloc(
+      getQuestionUsecase: locator(),
+      answerQuestionUsecase: locator(),
+    ),
+  );
+
   //Usecases
   locator.registerLazySingleton(
     () => Login(
@@ -61,6 +74,18 @@ Future<void> initializeInjector() async {
   locator.registerLazySingleton(
     () => GetShortProfile(
       locator(),
+    ),
+  );
+
+  locator.registerLazySingleton(
+    () => GetQuestion(
+      questionRepository: locator(),
+    ),
+  );
+
+  locator.registerLazySingleton(
+    () => AnswerQuestion(
+      questionRepository: locator(),
     ),
   );
 
@@ -83,6 +108,12 @@ Future<void> initializeInjector() async {
     ),
   );
 
+  locator.registerLazySingleton<QuestionRepository>(
+    () => QuestionRepositoryImpl(
+      questionRemoteDatasource: locator(),
+    ),
+  );
+
   //Data Sources
   locator.registerLazySingleton<AuthRemoteDatasource>(
     () => AuthRemoteDatasourceImpl(
@@ -100,6 +131,12 @@ Future<void> initializeInjector() async {
 
   locator.registerLazySingleton<ShortProfileDatasource>(
     () => ShortProfileDatasourceImpl(
+      client: locator(),
+    ),
+  );
+
+  locator.registerLazySingleton<QuestionRemoteDatasource>(
+    () => QuestionRemoteDatasourceImpl(
       client: locator(),
     ),
   );

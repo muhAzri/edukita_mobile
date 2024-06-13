@@ -1,17 +1,16 @@
+import 'package:core/common/assets_manager.dart';
 import 'package:core/common/styles.dart';
+import 'package:core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home/domain/entities/learning_topic.dart';
 import 'package:shimmer/shimmer.dart';
 
 class LearningTopicGridWidget extends StatelessWidget {
-  final String image;
-  final String learningTopicName;
-  final VoidCallback onTap;
+  final LearningTopic learningTopic;
   const LearningTopicGridWidget({
     super.key,
-    required this.image,
-    required this.learningTopicName,
-    required this.onTap,
+    required this.learningTopic,
   });
 
   @override
@@ -36,13 +35,17 @@ class LearningTopicGridWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         clipBehavior: Clip.hardEdge,
         child: InkWell(
-          onTap: onTap,
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.questionScreen, arguments: {
+              'learningTopicID': learningTopic.id,
+            });
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                image,
+                AssetsManager.getIcon(learningTopic.icon),
                 package: "core",
                 width: 110.w,
                 errorBuilder: (context, error, stackTrace) {
@@ -58,7 +61,7 @@ class LearningTopicGridWidget extends StatelessWidget {
                 height: 18.h,
               ),
               Text(
-                learningTopicName,
+                learningTopic.name,
                 style: primaryTextStyle.copyWith(
                   fontWeight: bold,
                 ),
