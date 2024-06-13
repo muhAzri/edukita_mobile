@@ -1,35 +1,27 @@
-name: core
+name: profile
 description: "A new Flutter package project."
 version: 0.0.1
 homepage: null
 publish_to: none
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: '>=3.4.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
-  auth:
-    path: ../auth
+  core:
+    path: ../core
+  dartz: ^0.10.1
   dio: ^5.4.3+1
   equatable: ^2.0.5
-  firebase_auth: ^4.19.5
-  firebase_core: ^2.31.0
+  fl_chart: ^0.68.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
-  flutter_screenutil: ^5.9.0
-  flutter_secure_storage: ^9.0.0
-  get_it: ^7.7.0
-  google_fonts: ^6.2.1
-  google_sign_in: ^6.2.1
-  home:
-    path: ../home
+  flutter_screenutil: ^5.9.1
+  intl: ^0.19.0
   json_annotation: ^4.9.0
-  profile:
-    path: ../profile
-  question:
-    path: ../question
+  shimmer: ^3.0.0
 
 dev_dependencies:
   build_runner: ^2.4.10
@@ -41,13 +33,12 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
-flutter:
+flutter: null
 
-  # To add assets to your package, add an assets section, like this:
-  assets:
-    - assets/icons/
-    - assets/images/
-
+# To add assets to your package, add an assets section, like this:
+# assets:
+#   - images/a_dot_burr.jpeg
+#   - images/a_dot_ham.jpeg
 #
 # For details regarding assets in packages, see
 # https://flutter.dev/assets-and-images/#from-packages

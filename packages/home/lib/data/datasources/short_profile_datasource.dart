@@ -36,6 +36,18 @@ class ShortProfileDatasourceImpl implements ShortProfileDatasource {
         throw ServerException(e.message);
       }
 
+      if (e is DioException) {
+        if (e.type == DioExceptionType.connectionError) {
+          throw ServerException(
+              "Connection Error. Please check your internet connection");
+        }
+
+        if (e.type == DioExceptionType.connectionTimeout) {
+          throw ServerException(
+              "Connection Timeout. Please check your internet connection");
+        }
+      }
+
       throw ServerException(e.toString());
     }
   }
