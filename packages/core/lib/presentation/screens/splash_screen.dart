@@ -4,6 +4,8 @@ import 'package:core/common/assets_manager.dart';
 import 'package:core/common/styles.dart';
 import 'package:core/router/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:core/injector.dart' as di;
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,12 +26,24 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(
         seconds: 3,
       ),
-      () {
-        Navigator.pushNamedAndRemoveUntil(
-          context,
-          AppRoutes.loginScreen,
-          (route) => false,
-        );
+      () async {
+        final FlutterSecureStorage storage = di.locator<FlutterSecureStorage>();
+        final token = await storage.read(key: "access_token");
+        if (mounted) {
+          if (token != null) {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.mainScreen,
+              (route) => false,
+            );
+          } else {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.loginScreen,
+              (route) => false,
+            );
+          }
+        }
       },
     );
   }

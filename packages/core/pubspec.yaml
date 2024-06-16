@@ -10,29 +10,45 @@ environment:
 
 dependencies:
   auth:
-    path: '../auth'
+    path: ../auth
   dio: ^5.4.3+1
+  equatable: ^2.0.5
+  firebase_auth: ^4.19.5
+  firebase_core: ^2.31.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.5
   flutter_screenutil: ^5.9.0
   flutter_secure_storage: ^9.0.0
   get_it: ^7.7.0
   google_fonts: ^6.2.1
+  google_sign_in: ^6.2.1
+  home:
+    path: ../home
+  intl: ^0.19.0
+  json_annotation: ^4.9.0
+  profile:
+    path: ../profile
+  question:
+    path: ../question
 
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  build_runner: ^2.4.10
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
-flutter: 
+flutter:
 
-# To add assets to your package, add an assets section, like this:
+  # To add assets to your package, add an assets section, like this:
   assets:
     - assets/icons/
     - assets/images/
+
 #
 # For details regarding assets in packages, see
 # https://flutter.dev/assets-and-images/#from-packages
