@@ -19,6 +19,11 @@ import 'package:home/domain/repositories/learning_topic_repository.dart';
 import 'package:home/domain/repositories/short_profile_repository.dart';
 import 'package:home/domain/usecases/get_learning_topics.dart';
 import 'package:home/domain/usecases/get_short_profile.dart';
+import 'package:profile/bloc/profile/profile_bloc.dart';
+import 'package:profile/data/datasources/user_profile_datasource.dart';
+import 'package:profile/data/repositories/user_profile_repository.dart';
+import 'package:profile/domain/repositories/user_profile_repository.dart';
+import 'package:profile/domain/usecases/get_user_profile.dart';
 import 'package:question/bloc/question/question_bloc.dart';
 import 'package:question/data/datasources/question_remote_datasource.dart';
 import 'package:question/data/repositories/question_repository.dart';
@@ -58,6 +63,12 @@ Future<void> initializeInjector() async {
     ),
   );
 
+  locator.registerFactory(
+    () => ProfileBloc(
+      getUserProfile: locator(),
+    ),
+  );
+
   //Usecases
   locator.registerLazySingleton(
     () => Login(
@@ -89,6 +100,12 @@ Future<void> initializeInjector() async {
     ),
   );
 
+  locator.registerLazySingleton(
+    () => GetUserProfile(
+      locator(),
+    ),
+  );
+
   //Repositories`
   locator.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(
@@ -111,6 +128,12 @@ Future<void> initializeInjector() async {
   locator.registerLazySingleton<QuestionRepository>(
     () => QuestionRepositoryImpl(
       questionRemoteDatasource: locator(),
+    ),
+  );
+
+  locator.registerLazySingleton<UserProfileRepository>(
+    () => UserProfileRepositoryImpl(
+      userProfileDatasource: locator(),
     ),
   );
 
@@ -137,6 +160,12 @@ Future<void> initializeInjector() async {
 
   locator.registerLazySingleton<QuestionRemoteDatasource>(
     () => QuestionRemoteDatasourceImpl(
+      client: locator(),
+    ),
+  );
+
+  locator.registerLazySingleton<UserProfileDatasource>(
+    () => UserProfileDatasourceImpl(
       client: locator(),
     ),
   );

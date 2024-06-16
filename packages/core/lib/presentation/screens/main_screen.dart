@@ -30,7 +30,9 @@ class _MainScreenState extends State<MainScreen> {
       case 1:
         return const Placeholder();
       case 2:
-        return const ProfileScreen();
+        return ProfileScreen(
+          profileBloc: di.locator(),
+        );
       default:
         return HomeScreen(
           learningTopicBloc: di.locator(),
