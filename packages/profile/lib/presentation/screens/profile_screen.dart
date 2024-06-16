@@ -1,7 +1,10 @@
 import 'package:core/common/styles.dart';
+import 'package:core/presentation/widgets/custom_button.dart';
+import 'package:core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:profile/bloc/profile/profile_bloc.dart';
 import 'package:profile/presentation/widgets/profile_stats_section_widget.dart';
 import 'package:profile/presentation/widgets/profile_user_section_widget.dart';
@@ -41,6 +44,19 @@ class ProfileScreen extends StatelessWidget {
                     ProfileStatsSectionWidget(
                       userProfile: state.userProfile,
                     ),
+                    CustomButton(
+                      margin: EdgeInsets.only(top: 48.h),
+                      label: 'Sign Out',
+                      buttonColor: dangerColor,
+                      onTap: () {
+                        const FlutterSecureStorage().deleteAll();
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          AppRoutes.loginScreen,
+                          (route) => false,
+                        );
+                      },
+                    )
                   ],
                 );
               }
