@@ -685,6 +685,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.11"
+  leaderboard:
+    dependency: transitive
+    description:
+      path: "packages/leaderboard"
+      relative: true
+    source: path
+    version: "0.0.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -1345,5 +1352,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=3.4.0 <4.0.0"
+  dart: ">=3.4.3 <4.0.0"
   flutter: ">=3.22.0"
