@@ -2,6 +2,7 @@ import 'package:core/common/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:home/presentation/screens/home_screen.dart';
 import 'package:core/injector.dart' as di;
+import 'package:leaderboard/presentation/screens/leaderboard_screen.dart';
 import 'package:profile/presentation/screens/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -28,7 +29,9 @@ class _MainScreenState extends State<MainScreen> {
           shortProfileBloc: di.locator(),
         );
       case 1:
-        return const Placeholder();
+        return LeaderboardScreen(
+          leaderboardBloc: di.locator(),
+        );
       case 2:
         return ProfileScreen(
           profileBloc: di.locator(),

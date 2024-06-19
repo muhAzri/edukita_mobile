@@ -44,8 +44,8 @@ class ProfileScreen extends StatelessWidget {
                     ProfileStatsSectionWidget(
                       userProfile: state.userProfile,
                     ),
+                    SizedBox(height: 48.h),
                     CustomButton(
-                      margin: EdgeInsets.only(top: 48.h),
                       label: 'Sign Out',
                       buttonColor: dangerColor,
                       onTap: () {
