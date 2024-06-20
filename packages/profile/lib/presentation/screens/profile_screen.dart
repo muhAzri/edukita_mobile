@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => profileBloc..add(GetUserProfileEvent()),
       child: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: BlocConsumer<ProfileBloc, ProfileState>(
             listener: (context, state) {

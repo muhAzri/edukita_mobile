@@ -1,4 +1,3 @@
-import 'package:core/common/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +13,7 @@ class LeaderboardScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => leaderboardBloc..add(GetLeaderboardEvent()),
       child: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: BlocConsumer<LeaderboardBloc, LeaderboardState>(
             listener: (context, state) {

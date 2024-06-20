@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:core/common/assets_manager.dart';
-import 'package:core/common/styles.dart';
 import 'package:core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:core/injector.dart' as di;
@@ -51,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
           AssetsManager.logoImage,
